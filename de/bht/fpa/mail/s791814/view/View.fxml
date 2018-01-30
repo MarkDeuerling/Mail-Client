@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.bht.fpa.mail.s791814.controller.Controller">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" prefHeight="600.0" prefWidth="900.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TreeView fx:id="treeView" layoutX="14.0" layoutY="112.0" prefHeight="578.0" prefWidth="258.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.5" layoutX="268.0" layoutY="199.0" orientation="VERTICAL" prefHeight="598.0" prefWidth="626.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <TableView fx:id="tableView" layoutY="2.0" prefHeight="269.0" prefWidth="610.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="70.0">
+                                <columns>
+                                  <TableColumn prefWidth="101.0" text="Importance" />
+                                  <TableColumn prefWidth="101.0" text="Received" />
+                                    <TableColumn prefWidth="101.0" text="Read" />
+                                    <TableColumn fx:id="senderCol" prefWidth="101.0" text="Sender" />
+                                    <TableColumn prefWidth="101.0" text="Recipients" />
+                                    <TableColumn prefWidth="103.0" text="Subject" />
+                                </columns>
+                              </TableView>
+                              <TextField fx:id="searchField" layoutX="109.0" layoutY="26.0" prefHeight="26.0" prefWidth="191.0" AnchorPane.bottomAnchor="217.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="20.0" />
+                              <Label layoutX="14.0" layoutY="20.0" prefHeight="32.0" prefWidth="59.0" text="Search: " AnchorPane.bottomAnchor="217.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="531.0" AnchorPane.topAnchor="20.0" />
+                              <Label fx:id="sizeLabel" layoutX="550.0" layoutY="28.0" text="( 0 )" AnchorPane.bottomAnchor="217.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+                           </children></AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Label layoutX="24.0" layoutY="-1.0" prefHeight="30.0" prefWidth="66.0" text="Sender:" />
+                              <Label layoutX="24.0" layoutY="29.0" prefHeight="30.0" prefWidth="66.0" text="Subject:" />
+                              <Label layoutX="24.0" layoutY="89.0" prefHeight="30.0" prefWidth="66.0" text="Receiver:" />
+                              <Label layoutX="24.0" layoutY="59.0" prefHeight="30.0" prefWidth="66.0" text="Received:" />
+                              <TextArea fx:id="textArea" layoutX="117.0" layoutY="120.0" prefHeight="149.0" prefWidth="610.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="120.0" />
+                              <Label fx:id="received" layoutX="107.0" layoutY="59.0" prefHeight="30.0" prefWidth="66.0" AnchorPane.leftAnchor="107.0" AnchorPane.rightAnchor="10.0" />
+                              <Label fx:id="receiver" layoutX="107.0" layoutY="89.0" prefHeight="30.0" prefWidth="66.0" AnchorPane.leftAnchor="107.0" AnchorPane.rightAnchor="10.0" />
+                              <Label fx:id="subject" layoutX="107.0" layoutY="29.0" prefHeight="30.0" prefWidth="66.0" AnchorPane.leftAnchor="107.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0" />
+                              <Label fx:id="sender" layoutX="107.0" layoutY="-1.0" prefHeight="30.0" prefWidth="66.0" AnchorPane.bottomAnchor="240.0" AnchorPane.leftAnchor="107.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="1.0" />
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <MenuBar fx:id="menuBar" AnchorPane.bottomAnchor="560.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Account">
+               <items>
+                  <Menu fx:id="openAccountMenu" mnemonicParsing="false" text="Open Account" />
+                  <Menu fx:id="editAccountMenu" mnemonicParsing="false" text="Edit Account" />
+                  <MenuItem fx:id="newAccount" mnemonicParsing="false" text="New Account" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem id="open" fx:id="open" mnemonicParsing="false" text="Open" />
+                  <MenuItem mnemonicParsing="false" text="History" />
+                  <MenuItem mnemonicParsing="false" text="Save" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
